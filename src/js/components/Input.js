@@ -1,6 +1,7 @@
 import store from "../data";
 import { nanoid } from "@reduxjs/toolkit";
 import { addItem } from "../data/shopping";
+import { stripHTML } from "./helpers";
 
 export default class Input {
   constructor(holder) {
@@ -12,7 +13,7 @@ export default class Input {
     this.holder.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="container">
+      <div class="container d-flex justify-content-center">
       <form class="mt-3 mb-5">
       <div class="row g-3 d-flex align-items-end">
         <div class="col">
@@ -46,7 +47,7 @@ export default class Input {
       }
       const item = {
         id: nanoid(),
-        name: this.ref.querySelector("#inputItem").value,
+        name: stripHTML(this.ref.querySelector("#inputItem").value),
         qty: +this.ref.querySelector("#inputQty").value,
       };
       store.dispatch(addItem(item));

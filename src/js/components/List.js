@@ -1,5 +1,6 @@
 import store from "../data";
 import { deleteItem } from "../data/shopping";
+import Edit from "./Edit";
 
 export default class List {
   constructor(holder) {
@@ -27,6 +28,7 @@ export default class List {
           `<li class="list-group-item mb-3" data-id="${item.id}">
           <span class="badge bg-primary rounded-pill col-1 me-2">${item.qty}</span>
           <span class="col me-auto">${item.name}</span>
+          <button class="editItem btn btn-primary col-2 me-2">Edit</button>
           <button class="deleteItem btn btn-danger col-2">Delete</button></li>`
       )
       .join("");
@@ -35,6 +37,10 @@ export default class List {
     this.ref.onclick = (e) => {
       if (e.target.classList.contains("deleteItem")) {
         store.dispatch(deleteItem(e.target.parentElement.dataset.id));
+      }
+      if (e.target.classList.contains("editItem")) {
+        document.querySelectorAll(".editItem").forEach((button) => (button.disabled = true));
+        new Edit(e.target.parentElement);
       }
     };
   }
