@@ -1,4 +1,4 @@
-#Redux Toolkit Excercise  
+# Redux Toolkit Excercise  
 Implementation of the Redux Toolkit fundamentals with simple shopping list app.
 
 Also a first exercise with Bootstrap css framework.
