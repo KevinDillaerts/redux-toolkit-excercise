@@ -32,3 +32,12 @@ $theme-colors: (
     align-items: center;
   }
 }
+
+@media screen and (max-width: 330px) {
+  body {
+    font-size: 80%;
+  }
+  .btn {
+    font-size: 0.75rem;
+  }
+}

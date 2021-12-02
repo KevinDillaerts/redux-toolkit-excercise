@@ -29,7 +29,7 @@ export default class List {
           <span class="badge bg-primary rounded-pill col-1 me-2">${item.qty}</span>
           <span class="col me-auto">${item.name}</span>
           <button class="editItem btn btn-primary col-2 me-2">Edit</button>
-          <button class="deleteItem btn btn-danger col-2">Delete</button></li>`
+          <button class="deleteItem btn btn-danger col-2 px-0">Delete</button></li>`
       )
       .join("");
   }
