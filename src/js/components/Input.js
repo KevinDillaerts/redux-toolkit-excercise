@@ -1,6 +1,5 @@
 import store from "../data";
-import { nanoid } from "@reduxjs/toolkit";
-import { addItem } from "../data/shopping";
+import { addItemDB, fetchDataDB } from "../data/shopping";
 import { stripHTML } from "./helpers";
 
 export default class Input {
@@ -46,11 +45,10 @@ export default class Input {
         return;
       }
       const item = {
-        id: nanoid(),
         name: stripHTML(this.ref.querySelector("#inputItem").value),
         qty: +this.ref.querySelector("#inputQty").value,
       };
-      store.dispatch(addItem(item));
+      store.dispatch(addItemDB(item));
       this.ref.reset();
       intputItem.focus();
     };
