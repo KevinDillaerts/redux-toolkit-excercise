@@ -1,5 +1,5 @@
 import store from "../data";
-import { addItemDB, fetchDataDB } from "../data/shopping";
+import { addItemDB } from "../data/shopping";
 import { stripHTML } from "./helpers";
 
 export default class Input {

@@ -1,5 +1,5 @@
 import store from "../data";
-import { deleteItem } from "../data/shopping";
+import { deleteItemDB } from "../data/shopping";
 import Edit from "./Edit";
 
 export default class List {
@@ -36,7 +36,7 @@ export default class List {
   setEvents() {
     this.ref.onclick = (e) => {
       if (e.target.classList.contains("deleteItem")) {
-        store.dispatch(deleteItem(e.target.parentElement.dataset.id));
+        store.dispatch(deleteItemDB(e.target.parentElement.dataset.id));
       }
       if (e.target.classList.contains("editItem")) {
         document.querySelectorAll(".editItem").forEach((button) => (button.disabled = true));
