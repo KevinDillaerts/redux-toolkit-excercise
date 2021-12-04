@@ -1,5 +1,5 @@
 import store from "../data";
-import { updateItem } from "../data/shopping";
+import { editItemDB } from "../data/shopping";
 import { stripHTML } from "./helpers";
 
 export default class Edit {
@@ -37,7 +37,7 @@ export default class Edit {
         name: stripHTML(this.ref.querySelector(".editName").value),
         qty: +this.ref.querySelector(".editQty").value,
       };
-      store.dispatch(updateItem(item));
+      store.dispatch(editItemDB(item));
     };
   }
 }
